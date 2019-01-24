@@ -1,0 +1,22 @@
+/** 1. INDEX */*
+
+.important {
+    margin: 25px;
+    padding: 15px;
+    border: 4px solid chartreuse;
+    background-color: #a2b7d8;
+    width: 400px;
+}
+
+.specific-font {
+    font-family: Arial;
+}
+
+#define-html {
+    background-color: #fd89d7;
+    font-size: 17px;
+}
+
+#www-title {
+    color: green;
+}

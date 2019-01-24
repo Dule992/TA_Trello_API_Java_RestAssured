@@ -1,0 +1,26 @@
+/* 2. COURSES */
+
+.sidebar {
+    background-color: #ccc;    
+}
+
+ul.sidebar {
+    padding-left: 0px;
+    width: 400px;
+}
+
+ul.sidebar li {
+    list-style: none;
+}
+
+ul.sidebar > li {
+    border-top: 2px solid blue;
+}
+
+ul.sidebar li ul {
+    padding-left: 0px;
+} 
+
+ul.sidebar li ul li {
+    background-color: #eee;
+}

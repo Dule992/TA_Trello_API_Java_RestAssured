@@ -1,0 +1,29 @@
+@media(max-width: 1200px) {
+    body {
+        width: 100%;
+    }
+}
+
+@media(max-width: 768px) {
+    article {
+        display: block;
+        width: 100%;
+    }
+    
+    aside {
+        display: block;
+         width: 100%;
+    }
+}
+
+@media(max-width: 480px) {
+    nav ul li {
+       display: block;
+       width: 100%;
+    }
+    
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+}

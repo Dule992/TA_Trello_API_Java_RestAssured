@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/form.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <header>
+            Cubes QA 2018
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Osnovni tagovi</a></li>
+                <li><a href="courses.html">Kursevi</a></li>
+                <li><a href="students.html">Studenti</a></li>
+                <li><a href="box-model.html">Box model</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h2>Korisnička forma</h2>
+            
+            <button type="button" onclick="changeDescription()">Popuni opis</button>
+            
+            <div id="description">
+                
+            </div>
+            
+            <form id="user-form" action="" method="POST">
+                <!-- Grupisanje tekstualnih input-a pomoću fieldset taga -->
+                <fieldset>
+                    <legend>Text input</legend>
+                    <div class="input-group">
+                        <label for="first_name">Ime</label>
+                        <input type="text" name="first_name" id="first_name" required="">
+                    </div>
+                    <div class="input-group">
+                        <label for="last_name">Prezime</label>
+                        <input type="text" name="last_name" id="last_name">
+                    </div>
+                    <div class="input-group">
+                        <label for="email_address">Email</label>
+                        <input type="email" name="email_address" id="email_address">
+                    </div>
+                    <div class="input-group">
+                        <label for="website">WEB sajt</label>
+                        <input type="url" name="website" id="website">
+                    </div>
+                    <div class="input-group">
+                        <label for="resume">Nešto o sebi</label>
+                        <textarea name="resume" id="resume" cols="80" rows="10"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Select element (padajuća lista)-->
+                <fieldset>
+                    <legend>Select input</legend>
+                    <div class="input-group">
+                        <label for="district">Izaberite opštinu</label>
+                        <select name="district" id="district">
+                            <option>---</option>
+                            <option value="nbg">Novi Beograd</option>
+                            <option value="rak">Rakovica</option>
+                            <option value="stg">Stari Grad</option>
+                            <option value="zem">Zemun</option>
+                            <option value="ban">Banjica</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- grupisanje radio inputa-->
+                <fieldset>
+                    <legend>Radio input</legend>
+
+                    <!-- grupisanje radio inputa koji su inline-->
+                    <div class="radio-inline">
+                        <p>Koji kurs pohađaš?</p>
+                        <label>
+                            <input type="radio" name="course" value="php">Back-End (PHP)
+                        </label>
+                        <label>
+                            <input type="radio" name="course" value="frontend">Front-End
+                        </label>
+                        <label>
+                            <input type="radio" name="course" value="qa">QA
+                        </label>
+                        <label>
+                            <input type="radio" name="course" value="android">Android
+                        </label>
+                        <label>
+                            <input type="radio" name="course" value="ios">iOS
+                        </label>
+                    </div>
+
+                    <!-- grupisanje radio inputa koji su block-->
+                    <div class="radio">
+                        <p>Koju oblast trenutno učiš?</p>
+                        <label>
+                            <input type="radio" name="current_chapter" value="web">Osnove interneta
+                        </label>
+                        <label>
+                            <input type="radio" name="current_chapter" value="html_css">HTML &amp; CSS
+                        </label>
+                        <label>
+                            <input type="radio" name="current_chapter" value="js">JavaScript
+                        </label>
+                        <label>
+                            <input type="radio" name="current_chapter" value="manual_testing">Manuelno testiranje
+                        </label>
+                        <label>
+                            <input type="radio" name="current_chapter" value="database">Baze podataka
+                        </label>
+                        <label>
+                            <input type="radio" name="current_chapter" value="automation_testing">Automatsko testiranje
+                        </label>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>CHECKBOX input</legend>
+                    <!-- grupisanje CHECKBOX inputa koji su block-->
+                    <div class="checkbox">
+                        <p>Izaberite savladane oblasti:</p>
+                        <label>
+                            <input type="checkbox" name="chapters[]" value="web"> Osnove interneta
+                        </label>
+                        <label>
+                            <input type="checkbox" name="chapters[]" value="html_css"> HTML &amp; CSS
+                        </label>
+                        <label>
+                            <input type="checkbox" name="chapters[]" value="js"> JavaScript
+                        </label>
+                        <label>
+                            <input type="checkbox" name="chapters[]" value="manual_testing"> Manuelno testiranje
+                        </label>
+                        <label>
+                            <input type="checkbox" name="chapters[]" value="automation_testing"> Automatsko testiranje
+                        </label>
+                    </div>
+
+                    <!-- grupisanje CHECKBOX inputa koji su inline-->
+                    <div class="checkbox-inline">
+                        <p>Koje oblasti su bile teške?</p>
+                        <label>
+                            <input type="checkbox" name="difficult[]" value="web"> Osnove interneta
+                        </label>
+                        <label>
+                            <input type="checkbox" name="difficult[]" value="html_css"> HTML &amp; CSS
+                        </label>
+                        <label>
+                            <input type="checkbox" name="difficult[]" value="js"> JavaScript
+                        </label>
+                        <label>
+                            <input type="checkbox" name="difficult[]" value="manual_testing"> Manuelno testiranje
+                        </label>
+                        <label>
+                            <input type="checkbox" name="difficult[]" value="automation_testing"> Automatsko testiranje
+                        </label>  
+                    </div>
+
+                </fieldset>
+
+                <div class="input-group">
+                    <button type="submit">Sačuvaj</button>
+                    <button type="reset">Poništi</button>
+                </div>
+            </form>
+        </article>
+        <aside>
+            <h3>Sidebar content</h3>
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim 
+                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+                porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
+                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, 
+                quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
+                qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                illum qui dolorem eum fugiat quo voluptas nulla pariatur
+            </p>
+        </aside>
+        <footer>
+            &copy; Cubes 2018
+        </footer>
+        <script src="assets/js/main.js" type="text/javascript"></script>
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,57 @@
+/* 0. GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, sans-serif, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+h1 {
+    color: red;
+    font-size: 30px;
+}
+
+h2 {
+    color: yellow;
+}
+
+p {
+    font-size: 12px;
+}
+
+/* mouse hover over every link */
+a:hover {
+    color: white;
+    background-color: black;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* 4. BORDER-BOX */
+
+#div1, #div2  {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    margin: 30px;
+}
+
+#div1 {
+    box-sizing: content-box;
+    border: 5px solid green;
+}
+
+#div2 {
+    box-sizing: border-box;
+    border: 5px solid blue;
+}

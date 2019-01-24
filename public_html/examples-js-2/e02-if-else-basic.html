@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>If-else basics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <h2>Primer 1:</h2>
+        <p id="message-box-1"></p>
+        
+        
+        <h2>Primer 2:</h2>
+        <label for="input-age">Unesite godine:</label><br>
+        <input type="number" id="input-age" value="16"> 
+        <p id="message-box-2"></p>
+        
+        <script type="text/javascript">
+
+            // 1) Definisati varijablu godine i dodelite joj neku vrednost.
+            // 2) Ispitati da li je osoba punoletna.
+            // 3) Prigodnu poruku ispisati u paragraf.
+
+            var age1 = 18; //number
+
+            if (age1 >= 18) {
+                document.getElementById('message-box-1').innerText = 'Osoba je punoletna';
+            } else {
+                document.getElementById('message-box-1').innerText = 'Osoba je maloletna'; 
+            }
+
+
+
+            // Pročitati predefinisanu vrednost iz input polja (kao da je korisnik već uneo)
+            
+            var age2 = document.getElementById('input-age').value;
+
+            if (age2 >= 18) {
+                document.getElementById('message-box-2').innerText = 'Osoba je punoletna';
+            } else {
+                document.getElementById('message-box-2').innerText = 'Osoba je maloletna';
+            }
+        </script>
+    </body>
+</html>

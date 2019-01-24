@@ -1,0 +1,157 @@
+
+<html>
+
+    <head>
+        <title>Uvod u HTML</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/index.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <header>
+            Cubes QA 2018
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Osnovni tagovi</a></li>
+                <li><a href="courses.html">Kursevi</a></li>
+                <li><a href="students.html">Studenti</a></li>
+                <li><a href="box-model.html">Box model</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h1>1. Šta je to Internet</h1>
+
+            <p>
+                Internet je globalna računarska mreža. Internet obezbeđuje da udaljeni računari međusobno komuniciraju.
+            </p>
+            <h2>1.1 IP Adresa</h2>
+
+            <p class="important specific-font">
+                Svaki računar na Internetu poseduje IP adresu koju obezbeđuje ISP i koja ga jednoznačno određuje.<br>
+                Da bi komunicirali sa drugim računarom na Internetu neophodno je da znate njegovu IP adresu.
+            </p> 
+
+            <p class="important specific-font">
+                <em>IP adresa</em> se predstavlja sa 4 broja u opsegu od 0 do 255 razdvojenim tačkom, na primer: 194.9.94.86
+            </p>
+
+
+            <h2>1.2 Internet Domen</h2>
+
+            <p class="specific-font">
+                Internet domen je tekstualna prezentacija IP adrese.
+                IP adresa se teško piše i pamti, zato je neophodno da se ona označi na čoveku privatljiv način za šta upravo služe domeni.
+                Primer jednog domena: cubes.rs
+                Domeni su organizovani hijerarhijski, domen office.cubes.rs je poddomen domena cubes.rs.
+                Domeni se registruju u sistemu imena domena eng. DNS - Domain Name System. Informacija o jednom domenu se nalazi na računaru na Internetu koji se naziva DNS server i koji pruža uslugu za razrešavanje IP adrese za koju je jedan domen vezan
+            </p>
+
+            <h1 id="define2">2. Šta je to WWW</h1>
+
+            <p>
+                <strong title="Ovo je title">WWW</strong> je skraćenica od <b>World Wide Web</b> i predstavlja sistem međusobno povezanog sadržaja (web sajtova) dostupnog na Internetu.
+                Osnovni pojomovi u WWW su:
+            </p>
+
+            <ul>
+                <li>web sajt</li>
+                <li>Web browser</li>
+                <li>Web server</li>
+                <li>HTTP</li>
+                <li>HTML</li>
+                <li>URL</li>
+            </ul>
+
+            <h2>2.1 Web sajt</h2>
+
+            <p class="important">
+                Web sajt predstavlja skup web sadržaja koji se nalaze na jednom domenu.
+            </p>
+
+            <h2 id="define3">2.2 Web browser</h2>
+
+            <p class="important">
+                Web browser predstavlja klijentski program pomoću kojeg se vrši pregled različitog web sadržaja (web stranice, slike, video sadržaj).
+            </p>
+
+            <h2>2.3 Web server</h2>
+
+            <p class="important">
+                Web server je računar na Internetu na kome se fizički nalazi web sadržaj. Web browser komunicira sa web serverom i od njega dobija traženi sadržaj.
+                Na jednom web serveru može se nalaziti sadržaj od više web sajtova tj. jedan web server može da "hostuje" više domena.
+            </p>
+
+            <h2>2.4 HTTP</h2>
+
+            <p>
+                HTTP je protokol po kome komuniciraju web browser (klijentski program) i web server (serverski program).
+                HTTP je skraćenica od Hypertext Transfer Protocol.
+            </p>
+
+
+            <h2>2.5 HTML</h2> 
+
+            <p id="define-html">
+                HTML je tip tekstualnog dokumenta u kome se nalaze instrukcije koje izvršava web browser pomoću kojih vrši prikaz web sadržaja.
+                U HTML dokumentu se definiše struktura web stranice.
+            </p>
+
+            <h2>2.6 URL</h2>
+
+            <p>
+                URL je skraćenica od Uniform Resource Locator.
+                URL predstavlja putanju do web sadržaja (fajla) na Internetu.
+            </p>
+
+
+
+            <h1>3. Korisni materijali</h1>
+
+            <h2>3.1 Šema komunikacije između web browser-a i web servera</h2>
+
+            <img src="http://www3.ntu.edu.sg/home/ehchua/programming/howto/images/HTTP_RequestResponseMessages.png" alt="sema komunikacije izmedju web browser-a i web servera">
+
+            <h2>3.2 Linkovi</h2>
+
+            <ol>
+                <li><a href="http://www.w3schools.com/html/default.asp" target="_blank">W3Schools HTML tutorijal</a></li>
+                <li><a href="http://www.w3schools.com/tags/default.asp" target="_blank">W3Schools HTML spisak tagova</a></li>
+                <li><a href="http://www.w3schools.com/css/default.asp" target="_blank">W3Schools CSS tutorijal</a></li>
+                <li><a href="http://www.w3schools.com/cssref/default.asp" target="_blank">W3Schools CSS spisak atributa</a></li>
+            </ol>
+
+            <h2>3.3 Video</h2>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/9hIQjrMHTv4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/J8hzJxb0rpc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Dxcc6ycZ73M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        </article>
+        <aside>
+            <h3>Sidebar content</h3>
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim 
+                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+                porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
+                adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, 
+                quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
+                qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                illum qui dolorem eum fugiat quo voluptas nulla pariatur
+            </p>
+        </aside>
+        <footer>
+            &copy; Cubes 2018
+        </footer>
+    </body>
+</html>

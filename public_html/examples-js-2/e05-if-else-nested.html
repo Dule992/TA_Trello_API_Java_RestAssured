@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>If-else advanced</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <p>
+            Statistički podaci: 
+            <span id="statics"></span>
+        </p>
+        
+        <script type="text/javascript">
+
+            // Definisanim varijablama dodeliti vrednosti koje se odnose na vas.
+            // Krajnja poruka treba da izgleda: Milomir Dragović je osoba muškog pola i on je nadprosečno visoka osoba.
+            //
+            // U ispitivanju se u obzir uzimaju pol i visina.
+            // Uslovi za  visinu ako je pol muški:
+            // viši 1.9 "visok"; između 1.7 i 1.9 "prosečno visok"; niži od 1.7 "nizak"
+            //
+            // Uslovi za visinu ako je poz ženski:
+            // viša od 1.8 "visoka"; između 1.55 i 1.8 "prosečno visoka"; niža od 1.55 "niska"
+
+            
+            // Krajnju statistiku ispisati u elementu koji ima id statistics
+
+            var name = 'Dušan';  //string
+            var surname = 'Milić'; //string
+            var gender = 'M'; //string M ili Z
+            var height = 175; // number vidth decimals
+            var statics = name + " " + surname; //prazan string
+
+            // Primeri:
+            // P1: Nikola Tesla je osoba muškog pola i on je nadprosečno visoka osoba.
+            // P2: Nikola Tesla je osoba muškog pola i on je prosečno visoka osoba.
+            // P3: Milena Ajnštajn je osoba ženskog pola i ona je prosečno visoka osoba.
+                
+            /************************************
+             VAŠ KOD IDE ISPOD
+             *************************************/
+            
+            if (gender = "M") {
+                statics = statics + "" + "je osoba muškog pola" + height;
+            } 
+            
+                if (height > 190) {
+                    height = statics + "i on je nadprosečno visoka osoba.";
+                } else if (height > 170) {
+                    height = statics + "i on je prosečno visoka osoba.";
+                } else (height < 170) {
+                    height = statics + "i on je prosečno niska osoba.";
+                }
+          
+                
+            console.log(statics);
+            
+            document.getElementById("statics").innerText = statics;
+
+            
+        </script>
+    </body>
+</html>

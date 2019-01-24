@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Funkcije</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0 auto;
+                width: 800px;
+            }
+            button{
+                display: inline-block;
+                padding: 10px 20px;
+                border:1px solid #444;
+            }
+
+            input{
+                width: 200px;
+                height: 32px;
+                margin-bottom: 10px;
+                border:1px solid #444;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <button onclick="displayMessage();">Prikaži poruku</button>
+
+        <button onclick="displayWarrning();">Prikaži Upozorenje</button>
+
+        <button onclick="displayDanger();">Prikaži Opasnost</button>
+        
+        <br>
+        <hr>
+
+        <button onclick="displayNotification(welcome);">Prikaži Poruku</button>
+
+        <button onclick="displayNotification(warning);">Prikaži Upozorenje</button>
+
+        <button onclick="displayNotification(danger);">Prikaži Opasnost</button>
+
+        <div>
+            <input type="text" id="message" placeholder="Enter message text">
+            <button onclick="getValue('message')">Pokupi vrednost</button>
+            <button type="button" onclick="clearMessageBox()">Clear</button>
+        </div>
+        
+        
+        <button onclick="addUp(9, 22);">Prikaži zbir 9 + 22</button>
+        
+    
+        <div id="messages">
+                
+        </div>
+        
+        <script type="text/javascript">
+
+            var welcome = 'Dobro došli!';
+            var warning = 'Upozorenje!';
+            var danger = 'Opasnost!';
+            
+            function displayMessage() {
+                alert(welcome);
+            }
+            
+            function displayWarrning() {
+                alert(warning);
+            }
+            
+            function displayDanger() {
+                alert(danger);
+            }
+                        
+            function displayNotification(notification) {
+                alert(notification);
+            }
+            
+            function addUp(a, b) {
+                alert(a + b);
+            }
+           
+            function getValue(id) {
+                alert(document.getElementById(id).value);
+            }
+            
+            function clearMessageBox() {
+                document.getElementById("message").value = "";
+            }
+            
+        </script>
+    </body>
+    
+</html>

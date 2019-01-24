@@ -1,0 +1,38 @@
+.input-group {
+    padding: 15px;
+}
+
+fieldset {
+    margin: 30px;
+}
+
+legend {
+    font-size: 20px;
+}
+
+#user-form p {
+    font-size: 16px;
+}
+
+#user-form input[name="first_name"] {
+    border: 2px solid #333;
+}
+
+#user-form input[type="email"] {
+    border: 2px solid #333;
+}
+
+#user-form input[type="text"][name="last_name"] {
+    border: 2px solid #375;
+}
+
+/* hoću da sakrijem kružić kod opcije QA */
+#user-form input[type="radio"][name="course"][value="qa"] {  
+    visibility: hidden; /* Sakrije se, ali postoji. */
+    /*display: none;  Ne zauzima prostor */
+}
+
+#user-form button[type="submit"] {
+    border: 1px solid #381;
+    background-color: #9f9;
+}

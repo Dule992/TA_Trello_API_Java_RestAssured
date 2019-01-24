@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>If else - advanced</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <p>
+            BIOGRAFIJA: <br>
+            <span id="biography"></span>
+        </p>
+        
+        <script type="text/javascript">
+
+            //Definisanim varijablama dodeliti vrednosti.
+            //Ispitati godine i u odnosu na njih ispisati "ime osobe" + "prezime" + "poruka(je punoletan/je maloletan)".
+            //Ispitati zaposlenje i u odnosu na to na prethodnu poruku dodati da je "ime" + "zaposlen u Cubes / nije zaposlen"
+            //Ispitati visinu. U zavisnosti od visine na prethodnu poruku dodati da je  
+            //"ime " + visok(>1.9), prosečne visine (>1.7 <=1.9) ili nizak (<=1.7)
+
+            // Krajnju biografiju ispisati u elementu koji ima id biography
+
+            let name = 'Nikola';  //string
+            let surname = "Tesla"; //string
+            let age = 32; //number
+            let height = 195; // number
+            let employed = true;  //boolean
+            let biography = '';   // empty string
+
+            /************************************
+             VAŠ KOD IDE ISPOD
+             *************************************/
+            
+            
+
+            if (age >= 18) {
+                biography = biography + 'Osoba ' + name + " " + surname + " je punoletna. \n";
+            } else {
+                biography = biography + 'Osoba ' + name + " " + surname + " je maloletna. \n";
+            }
+
+            console.log("Biografija 1: \n" + biography);
+            
+            
+            let full_name = name + ' ' + surname;
+
+            if (employed === true) {
+                biography += full_name + " je zaposlen(a). \n";
+            } else {
+                biography += full_name + " nije zaposlen(a). \n";
+            }
+
+            console.log("Biografija 2: \n" + biography);
+
+
+            if (height > 190) {
+                biography += name + " je nadprosečno visok(a). \n";
+            } else if (height > 170 && height <= 190) {
+                biography += name + " je prosečno visok. \n";
+            } else {
+                biography += name + " je nizak. \n";
+            }
+            
+            console.log("Biografija 3: \n" + biography);
+
+            document.getElementById('biography').innerText = biography;
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Funkcije - uvod</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <h2 id="head2">Primeri pozivanja funkcija</h2>
+        <label for="name" class="lbl">Unesite tekst: </label>
+        <input type="text" value="" name="ime" id="name">
+        <br>
+        
+        <button type="button" onclick="showMessage();">Pročitaj tekst i prikaži poruku</button>        
+        <p id="message-box"></p>
+
+
+        <script type="text/javascript">
+
+            //Primer razlikavanja lokalne i globalne promenjive.
+            let name = "Milomir";
+            
+            function showMessage() {
+                let message = document.getElementById('name').value;
+                document.getElementById('message-box').innerText = name;
+                document.getElementById('message-box').innerText = message;
+            }
+            
+            document.getElementById('head2').addEventListener('click', function () {
+                //alert(message);
+                alert('Event Listener nad bilo kojim tagom.');
+            });
+            
+        </script>
+    </body>
+</html>

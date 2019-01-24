@@ -1,0 +1,225 @@
+
+<html>
+  <head>
+        <title>Validacija forme</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                margin: 0 auto;
+                width: 500px;
+            }
+            
+            input, textarea {
+                width: 200px;
+                border:1px solid #000;
+                height: 30px;
+            }
+            
+            textarea {
+                height: 200px;
+            }
+            
+            button {
+                padding: 10px 20px;
+                border:2px solid aqua;
+            }
+
+            form p {
+                color:red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div>
+
+            <form>
+                <label>News title</label><br>
+                <input type="text" name="news-title" value="" id="news-title" required>
+                <p id="error-title"></p>
+
+                <label>News text</label><br>
+                <textarea name="news-text" rows="8" cols="80" id="news-text"></textarea>
+                <p id="error-text"></p>
+
+                <label>News link</label><br>
+                <input type="text" name="news-link" value="" required id="news-link">
+                <p id="error-link"></p>
+
+                <label>Author</label><br>
+                <input type="text" name="news-author" required value="" id="news-author">
+                <p id="error-author"></p>
+
+                <label>Author Email</label><br>
+                <input type="text" name="email" value="" id="email">
+                <p id="error-email"></p>
+
+                <button id="enter" onclick="formValidation()">Display</button>
+            </form>
+
+            <div id="content">
+
+            </div>
+        </div>
+
+
+        <script>
+
+            function formValidation() {
+
+                var formError = 0;
+                
+                var title = document.getElementById('news-title').value;
+                title = title.trim();
+                var titleError = [];
+
+                if (title.length == 0) {
+                    titleError.push('Polje title je obavezno polje.');
+
+                    formError++;
+                    displayErrors('news-title', 'error-title', titleError);
+
+                }
+                
+                if (title.length < 3 || title.length > 20) {
+                    titleError.push("Title mora biti izmedju 3 i 20 karaktera");
+
+                    displayErrors('news-title', 'error-title', titleError);
+                    formError++;
+                }
+
+                if (titleError.length == 0) {
+                    emptyErrors('news-title', 'error-title');
+                }
+
+
+                var descriptionError = [];
+                var description = document.getElementById('news-text').value;
+                description = description.trim();
+
+                if (description.length == 0) {
+                    descriptionError.push('Polje text je obavezno polje. ');
+                    displayErrors('news-text', 'error-text', descriptionError);
+                    formError = formError + 1;
+                }
+                
+                if (description.length < 10 || description.length > 250) {
+                    descriptionError.push('Text mora biti izmedju 10 i 250 karaktera');
+                    displayErrors('news-text', 'error-text', descriptionError);
+                    formError++;
+                }
+
+                if (descriptionError.length == 0) {
+                    emptyErrors('news-text', 'error-text');
+                }
+
+
+                var linkError = [];
+                var link = document.getElementById('news-link').value;
+                link = link.trim();
+                if (link.length < 5) {
+                    linkError.push("Link mora imati minimalno 5 karaktera");
+
+                    displayErrors('news-link', 'error-link', linkError);
+                    formError++;
+                }
+
+                if (!link.startsWith('http://')) {
+                    linkError.push("<br> Link mora poceti sa http://");
+                    displayErrors('news-link', 'error-link', linkError);
+                    formError++;
+                }
+
+                if (linkError.length == 0) {
+                    emptyErrors('news-link', 'error-link');
+                }
+
+                var authorError = [];
+                var author = document.getElementById('news-author').value;
+                author = author.trim();
+                if ((author.length > 0 && author.length < 3) || author.length > 20) {
+                    authorError.push('Polje Author mora biti izmedju 3 i 20 karaktera');
+                    displayErrors('news-author', 'error-author', authorError);
+                    formError++;
+                }
+                
+                if (authorError.length == 0) {
+                    emptyErrors('news-author', 'error-author');
+                }
+
+
+                var email = document.getElementById('email').value;
+                email = email.trim();
+
+                var emailErrors = [];
+
+                if (email.length == 0) {
+                    emailErrors.push("Polje Email je obavezno polje");
+                    displayErrors('email', 'error-email', emailErrors);
+                    formError++;
+                }
+
+                if (email.length < 5) {
+                    emailErrors.push("Polje Email mora biti duze od 5 karaktera");
+                    displayErrors('email', 'error-email', emailErrors);
+                    formError++;
+                }
+
+                if (email.indexOf('@') < 0) {
+                    emailErrors.push("Email mora imati @ karakter");
+                    displayErrors('email', 'error-email', emailErrors);
+                }
+
+                if (emailErrors.length == 0) {
+                    emptyErrors('email', 'error-email');
+
+                }
+
+
+                if (formError === 0) {
+
+                    displayMessage(title, description, link, author, email);
+
+                    document.getElementById('news-title').value = '';
+                    document.getElementById('news-text').value = '';
+                    document.getElementById('news-link').value = '';
+                    document.getElementById('news-author').value = '';
+                    document.getElementById('email').value = '';
+
+                }
+
+            }
+
+            function displayMessage(title, description, link, author, email) {
+                var oldHtml = document.getElementById('content').innerHTML;
+                var newHtml = '<h1>' + title + '</h1>' +
+                        '<p>' + description + '</p>' +
+                        '<a href="' + link + '">' + link + '</a>' +
+                        '<h4>' + author + '</h4>' +
+                        '<p>' + email + "</p>" + '<hr>' + oldHtml;
+                document.getElementById('content').innerHTML = newHtml;
+            }
+
+
+            function displayErrors(elementId, messageBoxId, error) {
+                document.getElementById(elementId).style.border = '1px solid red';
+                document.getElementById(messageBoxId).innerHTML = error.join('<br>');
+            }
+
+
+            function emptyErrors(elementId, messageBoxId) {
+                document.getElementById(elementId).style.border = '1px solid #000';
+                document.getElementById(messageBoxId).innerHTML = '';
+            }
+
+
+            document.getElementById('enter').addEventListener("click", function (event) {
+                event.preventDefault();
+            });
+
+
+        </script>
+    </body>
+</html>

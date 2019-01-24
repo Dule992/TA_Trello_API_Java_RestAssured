@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Funkcije</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            input{
+                width: 200px;
+                height: 32px;
+                border:1px solid #444;
+            }
+            button{
+                padding: 10px 20px;
+                display: inline-block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h2>Izračunavanje površine:</h2>
+        <p>
+            <label>Pravougaonik širina:</label>
+            <input type="text" id="rec-width" value="0">
+        </p>
+
+        <p>
+            <label>Pravougaonik dužina:</label>
+            <input type="text" id="rec-height" value="0">
+        </p>
+        
+        <p>
+            <label>Kvadrat širina:</label>
+            <input type="text" id="square-width" value="0">
+        </p>
+
+        <p>
+            <label>Poluprečnik kruga:</label>
+            <input type="text" id="circle" value="0">
+        </p>
+
+
+        <p>
+            <button type="button" onclick="showTotalSurface();">Izračunaj!</button>
+        </p>
+        
+        
+        <script type="text/javascript">
+            
+
+            //primer
+//            function addUp(a, b) {
+//                return a + b;
+//            }
+//            
+//            let z = addUp(5, 7);            
+//            alert(z);
+
+
+         
+            /**
+             * Calculates surface of rectangle
+             * @param {type} a
+             * @param {type} b
+             * @returns {Number}
+             */
+            function rectangleSurface(a, b) {
+                return a * b;
+            }
+
+            function squareSurface(a) {
+                return a * a;
+            }
+
+            function circleSurface(a){
+                return a * a * 3.14;
+            }
+
+            function totalSurface() {
+                let rectangle_a = document.getElementById("rec-width").value;
+                let rectangle_b = document.getElementById("rec-height").value;
+                let square = document.getElementById("square-width").value;
+                let circle = document.getElementById("circle").value;
+                
+                let total = rectangleSurface(rectangle_a, rectangle_b) + squareSurface(square) + circleSurface(circle);                
+                return total;
+            }
+
+            function showTotalSurface() {
+                alert(totalSurface());
+            }
+
+
+        </script>
+        
+    </body>
+</html>

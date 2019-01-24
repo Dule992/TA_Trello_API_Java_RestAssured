@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>If-else basics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <p>Elementi 'a' i 'b' su definisani u JS-u. Upoređivanje:</p>
+        <p id="message-box"></p>
+        
+        <script type="text/javascript">
+
+            // ispitati da li je a > b , a = b ili a < b
+            
+            var a = 50; //number
+            var b = 10; //number
+
+            if (a > b) {
+                document.getElementById('message-box').innerText = 'Vrednost broja a je (' + a + ') i ona je veca od vrednosti broja b (' + b + ').';
+            } else if (a === b) {
+                document.getElementById('message-box').innerText = 'Vrednost broja a je (' + a + ') i ona je jednaka vrednosti broja b (' + b + ').';
+            } else {
+                document.getElementById('message-box').innerText = 'Vrednost broja a je (' + a + ') i ona je manja od vrednosti broja b (' + b + ').';
+            }
+
+        </script>
+        
+    </body>
+</html>
