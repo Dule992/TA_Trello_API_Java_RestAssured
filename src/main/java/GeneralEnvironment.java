@@ -1,6 +1,6 @@
 import com.sun.xml.fastinfoset.util.StringArray;
 
-public class GeneralEnvironment extends Utils{
+public class GeneralEnvironment{
 
     String trelloAPIURL = "https://api.trello.com";
     String trelloKey = "061294be8a6fbac9affb93d6a56a6ee0";
