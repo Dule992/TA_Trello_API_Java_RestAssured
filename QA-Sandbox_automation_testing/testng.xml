@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="10" preserve-order="true" name="D:/workspace/QA-Sandbox_automation_testing/src/test/java/UI/TestSuite/CRUD_People.java">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="UI.TestSuite.CRUD_People">
+            <methods>
+                <include name="TC01_createNewTechnologyValid"/>
+                <include name="TC02_createNewSeniorityValid"/>
+                <include name="TC03_createNewPersonValid"/>
+                <include name="TC04_createAnExistingPerson"/>
+                <include name="TC05_editPeopleAndSwitchSideOfNameAndLastName"/>
+                <include name="TC06_removeAllCreatedPeople"/>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>
