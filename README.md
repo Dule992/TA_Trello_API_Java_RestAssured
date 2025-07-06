@@ -1,4 +1,4 @@
-# TrelloAPI-Rest-Assured-Project
+# TA Trello API Project-Java-RestAssured
 Testing web application: https://trello.com
 
 Project Information:
